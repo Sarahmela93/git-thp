@@ -1,0 +1,96 @@
+[2022-10-02 23:23:59] alias_delete_execute
+alias_delete_execute () 
+{ 
+    for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path";
+    do
+        if [[ -L "$_path/$1" ]]; then
+            \command \rm -fv "$_path/$1" || return $?;
+        fi;
+    done;
+    __rvm_db_ "$rvm_path/config/alias" "$1" "delete";
+    alias_after_delete_default "$1" || return $?
+}
+current path: /home/ayu
+GEM_PATH=/home/ayu/.rvm/gems/ruby-2.7.4:/home/ayu/.rvm/gems/ruby-2.7.4@global
+GEM_HOME=/home/ayu/.rvm/gems/ruby-2.7.4
+PATH=/home/ayu/.rvm/gems/ruby-2.7.4/bin:/home/ayu/.rvm/gems/ruby-2.7.4@global/bin:/home/ayu/.rvm/rubies/ruby-2.7.4/bin:/home/ayu/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2022.8.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/Lenovo/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Lenovo/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Lenovo/AppData/Local/Programs/Git/cmd:/mnt/c/Users/Lenovo/AppData/Local/atom/bin:/snap/bin
+command(2): alias_delete_execute default
++ for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path"
++ [[ -L /home/ayu/.rvm/rubies/default ]]
++ command rm -fv /home/ayu/.rvm/rubies/default
++ rm -fv /home/ayu/.rvm/rubies/default
+removed '/home/ayu/.rvm/rubies/default'
++ for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path"
++ [[ -L /home/ayu/.rvm/gems/default ]]
++ command rm -fv /home/ayu/.rvm/gems/default
++ rm -fv /home/ayu/.rvm/gems/default
+removed '/home/ayu/.rvm/gems/default'
++ for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path"
++ [[ -L /home/ayu/.rvm/environments/default ]]
++ command rm -fv /home/ayu/.rvm/environments/default
++ rm -fv /home/ayu/.rvm/environments/default
+removed '/home/ayu/.rvm/environments/default'
++ for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path"
++ [[ -L /home/ayu/.rvm/wrappers/default ]]
++ command rm -fv /home/ayu/.rvm/wrappers/default
++ rm -fv /home/ayu/.rvm/wrappers/default
+removed '/home/ayu/.rvm/wrappers/default'
++ __rvm_db_ /home/ayu/.rvm/config/alias default delete
++ typeset __db __key __value
++ __db=/home/ayu/.rvm/config/alias
++ __key=default
++ shift 2
++ __value=delete
++ case "${__value}" in
++ __rvm_db_remove /home/ayu/.rvm/config/alias default
++ [[ -f /home/ayu/.rvm/config/alias ]]
++ __rvm_sed -e '\#^default=# d' -e '/^$/d' /home/ayu/.rvm/config/alias
++ sed -e '\#^default=# d' -e '/^$/d' /home/ayu/.rvm/config/alias
++ command mv -f /home/ayu/.rvm/config/alias.new /home/ayu/.rvm/config/alias
++ mv -f /home/ayu/.rvm/config/alias.new /home/ayu/.rvm/config/alias
++ alias_after_delete_default default
++ [[ default == \d\e\f\a\u\l\t ]]
++ for _path in "$rvm_bin_path"/default_*
++ [[ -f /home/ayu/.rvm/bin/default_* ]]
++ _path='/home/ayu/.rvm/bin/default_*'
++ [[ -f /home/ayu/.rvm/bin/default_* ]]
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path='*'
++ command rm -fv '/home/ayu/.rvm/bin/*'
++ rm -fv '/home/ayu/.rvm/bin/*'
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=gem
++ command rm -fv /home/ayu/.rvm/bin/gem
++ rm -fv /home/ayu/.rvm/bin/gem
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=irb
++ command rm -fv /home/ayu/.rvm/bin/irb
++ rm -fv /home/ayu/.rvm/bin/irb
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=erb
++ command rm -fv /home/ayu/.rvm/bin/erb
++ rm -fv /home/ayu/.rvm/bin/erb
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=ri
++ command rm -fv /home/ayu/.rvm/bin/ri
++ rm -fv /home/ayu/.rvm/bin/ri
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=rdoc
++ command rm -fv /home/ayu/.rvm/bin/rdoc
++ rm -fv /home/ayu/.rvm/bin/rdoc
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=testrb
++ command rm -fv /home/ayu/.rvm/bin/testrb
++ rm -fv /home/ayu/.rvm/bin/testrb
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=rake
++ command rm -fv /home/ayu/.rvm/bin/rake
++ rm -fv /home/ayu/.rvm/bin/rake
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=ruby
++ command rm -fv /home/ayu/.rvm/bin/ruby
++ rm -fv /home/ayu/.rvm/bin/ruby
++ for _path in "$rvm_path"/wrappers/default/* gem irb erb ri rdoc testrb rake ruby bundle
++ _path=bundle
++ command rm -fv /home/ayu/.rvm/bin/bundle
++ rm -fv /home/ayu/.rvm/bin/bundle

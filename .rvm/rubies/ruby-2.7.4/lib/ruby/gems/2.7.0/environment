@@ -1,0 +1,8 @@
+export PATH="/home/ayu/.rvm/gems/ruby-2.7.4@global/bin:/home/ayu/.rvm/rubies/ruby-2.7.4/bin:$PATH"
+export GEM_HOME='/home/ayu/.rvm/gems/ruby-2.7.4@global'
+export GEM_PATH='/home/ayu/.rvm/gems/ruby-2.7.4@global'
+export MY_RUBY_HOME='/home/ayu/.rvm/rubies/ruby-2.7.4'
+export IRBRC='/home/ayu/.rvm/rubies/ruby-2.7.4/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT
+export RUBY_VERSION='ruby-2.7.4'
